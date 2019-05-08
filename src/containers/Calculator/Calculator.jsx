@@ -4,6 +4,7 @@ import React from 'react';
 import CalculatorButton from '../../components/CalculatorButton/CalculatorButton';
 import ResultDisplay from '../../components/ResultDisplay/ResultDisplay';
 import { default as buttonRows } from '../../data/buttons.json';
+import { isNumber } from '../../util/util';
 
 class Calculator extends React.Component {
 
@@ -35,6 +36,9 @@ class Calculator extends React.Component {
     if (element === '.' && this.state.currentOperation.includes('.')) {
       return;
     }
+    if (!isNumber(element) && !isNumber(this.state.currentOperation.slice(-1))) {
+      return;
+    }
     this.setState((prevState) => ({ currentOperation: prevState.currentOperation + element }));
   }
 
@@ -49,7 +53,7 @@ class Calculator extends React.Component {
   doCalculation() {
     try {
       const result = eval(this.state.currentOperation);
-      this.setState({ currentOperation: result });
+      this.setState({ currentOperation: result.toString() });
     }
     catch (err) {
       console.log('Operation could not be completed');

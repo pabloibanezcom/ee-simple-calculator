@@ -39,6 +39,18 @@ describe('Calculator', function () {
       component.instance().addNumberOrOperation('.');
       expect(component.state().currentOperation).toBe('111.222');
     });
+
+    it('should not add operation element when last char in currentOperation is operarion element', function () {
+      component.setState({ currentOperation: '111.222+' });
+      component.instance().addNumberOrOperation('-');
+      expect(component.state().currentOperation).toBe('111.222+');
+    });
+
+    it('should add number element when last char in currentOperation is operarion element', function () {
+      component.setState({ currentOperation: '111.222+' });
+      component.instance().addNumberOrOperation('4');
+      expect(component.state().currentOperation).toBe('111.222+4');
+    });
   });
 
   describe('clear', function () {
@@ -61,25 +73,25 @@ describe('Calculator', function () {
     it('should calculate a sum based on currentOperation ', function () {
       component.setState({ currentOperation: '12+45' });
       component.instance().doCalculation();
-      expect(component.state().currentOperation).toBe(57);
+      expect(component.state().currentOperation).toBe('57');
     });
 
     it('should calculate a subtraction based on currentOperation ', function () {
       component.setState({ currentOperation: '11-3' });
       component.instance().doCalculation();
-      expect(component.state().currentOperation).toBe(8);
+      expect(component.state().currentOperation).toBe('8');
     });
 
     it('should calculate a multiplication based on currentOperation ', function () {
       component.setState({ currentOperation: '4 * 5' });
       component.instance().doCalculation();
-      expect(component.state().currentOperation).toBe(20);
+      expect(component.state().currentOperation).toBe('20');
     });
 
     it('should calculate a division based on currentOperation ', function () {
       component.setState({ currentOperation: '12 / 3' });
       component.instance().doCalculation();
-      expect(component.state().currentOperation).toBe(4);
+      expect(component.state().currentOperation).toBe('4');
     });
   });
 

@@ -1,0 +1,23 @@
+.calculator {
+  border: 3px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  height: 570px;
+  width: 400px;
+}
+
+.calculator--display {
+  background-color: var(--white-color);
+  height: 30%;
+  width: 100%;
+}
+
+.calculator--buttons {
+  display: flex;
+  height: 70%;
+  width: 100%;
+}
+
+.calculator--row {
+  width: 25%;
+}

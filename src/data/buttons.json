@@ -1,0 +1,94 @@
+[
+  [
+    {
+      "value": "C",
+      "action": "clear",
+      "type": "secondary"
+    },
+    {
+      "value": "7",
+      "action": "number"
+    },
+    {
+      "value": "4",
+      "action": "number"
+    },
+    {
+      "value": "1",
+      "action": "number"
+    },
+    {
+      "value": "%",
+      "action": "operation"
+    }
+  ],
+  [
+    {
+      "value": "/",
+      "action": "operation",
+      "type": "secondary"
+    },
+    {
+      "value": "8",
+      "action": "number"
+    },
+    {
+      "value": "5",
+      "action": "number"
+    },
+    {
+      "value": "2",
+      "action": "number"
+    },
+    {
+      "value": "0",
+      "action": "number"
+    }
+  ],
+  [
+    {
+      "value": "*",
+      "action": "operation",
+      "type": "secondary"
+    },
+    {
+      "value": "9",
+      "action": "number"
+    },
+    {
+      "value": "6",
+      "action": "number"
+    },
+    {
+      "value": "3",
+      "action": "number"
+    },
+    {
+      "value": ".",
+      "action": "number"
+    }
+  ],
+  [
+    {
+      "value": "<",
+      "action": "removeLast",
+      "type": "secondary"
+    },
+    {
+      "value": "-",
+      "action": "operation",
+      "type": "secondary"
+    },
+    {
+      "value": "+",
+      "action": "operation",
+      "type": "secondary"
+    },
+    {
+      "value": "=",
+      "action": "calculation",
+      "type": "primary",
+      "size": 2
+    }
+  ]
+]

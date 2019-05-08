@@ -1,9 +1,20 @@
+import { shallow } from 'enzyme';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App', function () {
+
+  let component;
+
+  beforeEach(() => {
+    component = shallow(<App />);
+  });
+
+  it('should render without throwing an error', function () {
+    expect(component.find('.app').length).toBe(1);
+  });
+
+  it('should render logo', function () {
+    expect(component.find('.app--logo').prop('src')).toEqual('logo.svg');
+  });
 });
